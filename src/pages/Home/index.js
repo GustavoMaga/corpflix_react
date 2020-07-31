@@ -2,15 +2,16 @@
 import React from 'react';
 
 //import dos components para pagina
-import Menu from './components/Menu/'
-import Footer from './components/Footer/'
-import BannerMain from './components/BannerMain/'
+import Menu from '../../components/Menu'
+import Footer from '../../components/Footer'
+import BannerMain from '../../components/BannerMain'
+import Carousel from '../../components/Carousel'
 
 //import dos dados que tem que subir na pagina
-import dadosIniciais from './data/dados_iniciais.json'
+import dadosIniciais from '../../data/dados_iniciais.json'
 
 //função da aplicação
-function App() {
+function Home() {
   // a função retorna um JSX
   return (
     <div>
@@ -20,10 +21,15 @@ function App() {
         url={dadosIniciais.categorias[0].videos[0].url}
         videoDescription={"O que é Front-End? Como começar na área?"}
       >
-      </BannerMain>  
+      </BannerMain> 
+      <Carousel
+        ignoreFirstVideo
+        category={dadosIniciais.categorias[0]}
+      >
+      </Carousel> 
       <Footer></Footer>
     </div>
   );
 }
 
-export default App;
+export default Home;
